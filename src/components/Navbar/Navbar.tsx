@@ -8,19 +8,19 @@ export const Navbar = () => {
     return(
         <nav className={nav.nav}>
             <div className={nav.item}>
-                <a >Profile</a>
+                <a href='/profile'>Profile</a>
             </div>
             <div className={nav.item}>
-                <a >Message</a>
+                <a href='dialogs'>Message</a>
             </div>
             <div className={nav.item}>
-                <a >News</a>
+                <a href='news'>News</a>
             </div>
             <div className={nav.item}>
-                <a >Music</a>
+                <a href='music'>Music</a>
             </div>
             <div className={nav.item}>
-                <a >Settings</a>
+                <a href='settings'>Settings</a>
             </div>
         </nav>
 
