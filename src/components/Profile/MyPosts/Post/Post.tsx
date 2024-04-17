@@ -18,7 +18,7 @@ export const Post = (props: PostType) => {
             {props.message}
 
             <div>
-                <span>{props.like}</span>
+                <span>Like {props.like}</span>
             </div>
 
         </div>
