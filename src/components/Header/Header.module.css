@@ -3,7 +3,7 @@
 
 .header {
     grid-area: h;
-    background-color: aqua;
+    background-color: dimgray;
 }
 
 .header img {

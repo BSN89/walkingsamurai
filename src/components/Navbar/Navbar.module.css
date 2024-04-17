@@ -3,7 +3,7 @@
 
 .nav {
     grid-area: n;
-    background-color: darkslategray;
+    background-color: darkgray;
 }
 
 .item {
