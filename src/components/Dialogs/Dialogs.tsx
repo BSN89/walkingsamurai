@@ -22,7 +22,7 @@ export const Dialogs = () => {
                 </div>
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Hi</div>
+                <div className={s.message}>Hi, im fine</div>
                 <div className={s.message}>How is your it-kamasutra</div>
                 <div className={s.message}>Yo</div>
             </div>
