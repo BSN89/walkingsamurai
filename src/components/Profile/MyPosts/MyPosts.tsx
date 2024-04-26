@@ -1,20 +1,25 @@
 import React from "react";
-import cont from "./MyPosts.module.css"
+import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 
 export const MyPosts = () => {
-    return(
-        <div>
-            My posts
+    return (
+        <div className={s.postBlock}>
+            <h3> My posts</h3>
 
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
-                <button>remove</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                    <button>remove</button>
+                </div>
+
             </div>
-            <div className={cont.posts}>
-               <Post message='Hi, how are you?' like={20}/>
-               <Post message='Hello my friend' like={15}/>
+            <div className={s.posts}>
+                <Post message='Hi, how are you?' like={20}/>
+                <Post message='Hello my friend' like={15}/>
 
             </div>
         </div>
