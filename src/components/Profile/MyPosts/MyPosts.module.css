@@ -1,14 +1,13 @@
 
-<<<<<<< HEAD
+
 .postBlock {
     padding: 10px;
 }
-.posts {
-=======
+
 .postsBlock{
     padding: 10px;
 }
 .posts{
->>>>>>> test-branch
+
     margin-top: 10px;
 }
