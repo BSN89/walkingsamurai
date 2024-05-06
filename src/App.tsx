@@ -17,9 +17,7 @@ export const App = () => {
                 <div className={'app-wrapper-content'}>
                     <Route exact path='/dialogs' component={Dialogs}/>
                     <Route path='/profile' component={Profile}/>
-                    <Route path='/news' component={Post}/>
-                    <Route path='/music' component={MyPosts}/>
-                    <Route path='/settings' component={Profile}/>
+
                 </div>
             </div>
         </BrowserRouter>

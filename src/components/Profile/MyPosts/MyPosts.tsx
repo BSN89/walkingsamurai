@@ -3,25 +3,21 @@ import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 
 
-type PostDate = {
-    id: number,
-    message: string,
-    likesCount: number
-}
-
-export const MyPosts = ( {id, message, likesCount}: PostDate) => {
-
-    let postData = [
+export const MyPosts = () => {
+    let posts = [
         {id: 1, message: "Hi, how are you?", likesCount: 12},
-        {id: 2, message: "Hello my friend", likesCount: 30},
-
+        {id: 2, message: "Hello my friend", likesCount: 11},
     ]
 
+    let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
     return (
-        <div className={s.postBlock}>
-            <h3> My posts</h3>
+        <div className={s.postsBlock}>
+
+            <h3>My posts</h3>
 
             <div>
+
                 <div>
                     <textarea></textarea>
                 </div>
@@ -31,9 +27,12 @@ export const MyPosts = ( {id, message, likesCount}: PostDate) => {
                 </div>
 
             </div>
+
+
             <div className={s.posts}>
-                <Post message={postData[0].message} like={postData[0].likesCount}/>
-                <Post message={postData[1].message} like={postData[1].likesCount}/>
+
+                {postsElements}
+
 
             </div>
         </div>
