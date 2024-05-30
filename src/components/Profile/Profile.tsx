@@ -5,11 +5,15 @@ import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 
 
 export const Profile = () => {
+    let posts = [
+        {id: 1, message: "Hi, how are you?", likesCount: 12},
+        {id: 2, message: "Hello my friend", likesCount: 11},
+    ]
     return (
 
         <div>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts posts={posts}/>
         </div>
 
     )

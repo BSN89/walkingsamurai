@@ -12,16 +12,16 @@ export const Navbar = () => {
                 <NavLink to='/profile' activeClassName={nav.activeLink}>Profile</NavLink>
             </div>
             <div className={nav.item}>
-                <NavLink to='dialogs' activeClassName={nav.activeLink}>Message</NavLink>
+                <NavLink to='/dialogs' activeClassName={nav.activeLink}>Message</NavLink>
             </div>
             <div className={nav.item}>
-                <NavLink to='news' activeClassName={nav.activeLink}>News</NavLink>
+                <NavLink to='/news' activeClassName={nav.activeLink}>News</NavLink>
             </div>
             <div className={nav.item}>
-                <NavLink to='music' activeClassName={nav.activeLink}>Music</NavLink>
+                <NavLink to='/music' activeClassName={nav.activeLink}>Music</NavLink>
             </div>
             <div className={nav.item}>
-                <NavLink to='settings' activeClassName={nav.activeLink}>Settings</NavLink>
+                <NavLink to='/settings' activeClassName={nav.activeLink}>Settings</NavLink>
             </div>
         </nav>
 
