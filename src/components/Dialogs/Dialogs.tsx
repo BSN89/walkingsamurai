@@ -1,21 +1,19 @@
 import s from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
 import {DialogItem} from "./DialogsItem/DialogItem";
 import {Message} from "./Message/Message";
-import {DialogsType, MessagesType} from "../../index";
+import {MessagesPageType} from "../../redux/state";
 
 
 export type DialogsTypeProps = {
-    messages: MessagesType[]
-    dialogs: DialogsType[]
+    dialogsState: MessagesPageType
 }
 
-export const Dialogs = ({messages, dialogs}: DialogsTypeProps) => {
+export const Dialogs = ({dialogsState}: DialogsTypeProps) => {
 
 
 
-    let messageElements = messages.map(m => <Message message = {m.message} id={m.id}/>)
-    let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
+    let messageElements = dialogsState.messages.map(m => <Message message = {m.message} id={m.id}/>)
+    let dialogsElements = dialogsState.dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
 
 
     return (
