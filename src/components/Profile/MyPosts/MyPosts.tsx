@@ -1,25 +1,22 @@
 import React from "react";
 import s from "./MyPosts.module.css"
-import {Post, PostType} from "./Post/Post";
-type MyPostsProps = {
+import {Post} from "./Post/Post";
+import {PostType} from "../../../index";
+
+
+export type MyPosts = {
     posts: PostType[]
 }
 
-export const MyPosts = ({posts}: MyPostsProps) => {
-    // let posts = [
-    //     {id: 1, message: "Hi, how are you?", likesCount: 12},
-    //     {id: 2, message: "Hello my friend", likesCount: 11},
-    // ]
+export const MyPosts = ({posts}: MyPosts) => {
 
-    let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
+    let postsElements = posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
 
     return (
         <div className={s.postsBlock}>
-
             <h3>My posts</h3>
-
             <div>
-
                 <div>
                     <textarea></textarea>
                 </div>
@@ -27,15 +24,9 @@ export const MyPosts = ({posts}: MyPostsProps) => {
                     <button>Add post</button>
                     <button>remove</button>
                 </div>
-
             </div>
-
-
             <div className={s.posts}>
-
                 {postsElements}
-
-
             </div>
         </div>
     )

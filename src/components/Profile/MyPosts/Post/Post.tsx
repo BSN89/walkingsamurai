@@ -1,11 +1,9 @@
 import React from "react";
 import s from "./Post.module.css"
+import {PostType} from "../../../../index";
 
-export type PostType = {
 
-    message: string
-    likesCount: number
-}
+
 
 
 export const Post = ({message, likesCount}:  PostType) => {
