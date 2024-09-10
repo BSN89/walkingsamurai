@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState, MouseEvent, ChangeEvent} from "react";
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import {PostType} from "../../../redux/state";
@@ -6,21 +6,24 @@ import {PostType} from "../../../redux/state";
 
 export type MyPosts = {
     posts: PostType[]
+    addPost: (postMessage: string) => void
 }
 
-export const MyPosts = ({posts}: MyPosts) => {
-
+export const MyPosts = ({posts, addPost}: MyPosts) => {
+let [post, setPost] = useState<string>('')
 
     let postsElements =
         posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
 
-    const textereaRef = useRef<HTMLTextAreaElement>(null);
+   // const textereaRef = useRef<HTMLTextAreaElement>(null);
 
-    const addPost = () => {
-        if (textereaRef.current) {
-            alert(textereaRef.current.value)
-            textereaRef.current.value = ''
-        }
+    const addMyPosts = () => {
+        addPost(post)
+        setPost('')
+    }
+    const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setPost(e.currentTarget.value)
+
     }
 
     return (
@@ -28,10 +31,10 @@ export const MyPosts = ({posts}: MyPosts) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea ref={textereaRef}></textarea>
+                    <textarea value={post} onChange={onChangeHandler}></textarea>
                 </div>
                 <div>
-                    <button onClick={addPost}>Add post</button>
+                    <button onClick={addMyPosts}>Add post</button>
                     <button>remove</button>
                 </div>
             </div>
