@@ -11,6 +11,7 @@ export type MyPosts = {
 
 export const MyPosts = ({posts, addPost}: MyPosts) => {
 let [post, setPost] = useState<string>('')
+    console.log(post)
 
     let postsElements =
         posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
