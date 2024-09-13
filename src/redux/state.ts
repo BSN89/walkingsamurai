@@ -16,7 +16,7 @@ export type MessagesType = {
 
 export type ProfilePageType = {
     posts: PostType[]
-
+    newMessage: string
 }
 export type MessagesPageType = {
     messages: MessagesType[]
@@ -35,8 +35,9 @@ export const state: StateType = {
             {id: 3, message: "Hello my", likesCount: 11},
             {id: 4, message: "Hello", likesCount: 11},
         ],
-
+        newMessage: ''
     },
+
     messagesPage: {
         messages: [
             {id: 1, message: "Hi"},
@@ -58,13 +59,20 @@ export const state: StateType = {
 
 }
 
-export const addPost = (postMessage: string) => {
+
+
+export const addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newMessage,
         likesCount: 0
     }
     state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
+}
+
+export const addNewMessage = (newMessage: string) => {
+    state.profilePage.newMessage = newMessage
     rerenderEntireTree(state)
 }
 console.log(state)

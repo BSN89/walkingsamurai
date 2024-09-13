@@ -6,10 +6,11 @@ import {PostType} from "../../../redux/state";
 
 export type MyPosts = {
     posts: PostType[]
-    addPost: (postMessage: string) => void
+    addPost: () => void
+    addNewMessage: (postMessage: string) => void
 }
 
-export const MyPosts = ({posts, addPost}: MyPosts) => {
+export const MyPosts = ({posts, addPost, addNewMessage}: MyPosts) => {
 let [post, setPost] = useState<string>('')
     console.log(post)
 
@@ -19,12 +20,12 @@ let [post, setPost] = useState<string>('')
    // const textereaRef = useRef<HTMLTextAreaElement>(null);
 
     const addMyPosts = () => {
-        addPost(post)
+        addPost()
+        addNewMessage(post)
         setPost('')
     }
     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setPost(e.currentTarget.value)
-
     }
 
     return (
