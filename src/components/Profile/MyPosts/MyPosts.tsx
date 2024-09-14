@@ -1,4 +1,4 @@
-import React, {useRef, useState, MouseEvent, ChangeEvent} from "react";
+import React, { useState,  ChangeEvent} from "react";
 import s from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import {PostType} from "../../../redux/state";
@@ -24,6 +24,7 @@ let [post, setPost] = useState<string>('')
         addNewMessage(post)
         setPost('')
     }
+
     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setPost(e.currentTarget.value)
     }
