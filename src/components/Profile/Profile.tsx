@@ -1,7 +1,7 @@
 import React from "react";
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {addNewMessage,  ProfilePageType} from "../../redux/state";
+import { ProfilePageType} from "../../redux/state";
 
 
 
@@ -11,7 +11,7 @@ export type ProfilePropsType = {
     addNewMessage: (postMessage: string) => void
 }
 
-export const Profile = ({profileState, addPost}: ProfilePropsType) => {
+export const Profile = ({profileState, addPost, addNewMessage}: ProfilePropsType) => {
 
     return (
 

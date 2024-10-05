@@ -5,14 +5,14 @@ import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {addNewMessage, addPost, StateType} from "./redux/state";
+import {StateType} from "./redux/state";
 
 export type AppPropsType = {
     state: StateType
     addPost: () => void
     addNewMessage: (postMessage: string) => void
 }
-export const App = ({state}: AppPropsType) => {
+export const App = ({state, addPost, addNewMessage}: AppPropsType) => {
     return (
         <BrowserRouter>
             <div className={"app-wrapper"}>
